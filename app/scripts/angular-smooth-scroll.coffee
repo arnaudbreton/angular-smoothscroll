@@ -1,13 +1,13 @@
-"use strict"
+'use strict'
 
 ###
 A simple AngularJS directive to render a smooth scroll effect
-Usage: <element smooth-scroll target="id" [offset="value"]></element>
+Usage: <element smooth-scroll target='id' [offset='value']></element>
 @author: Arnaud BRETON (arnaud@videonot.es)
 Inspired by http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
 ###
-angular.module("angularSmoothscroll", [])
-  .directive "smoothScroll", ["$log", "$timeout", "$window", ($log, $timeout, $window) ->
+angular.module('angularSmoothscroll', [])
+  .directive 'smoothScroll', ['$log', '$timeout', '$window', ($log, $timeout, $window) ->
     ###
     Retrieve the current vertical position
     @returns Current vertical position
@@ -30,7 +30,7 @@ angular.module("angularSmoothscroll", [])
     ###
     elmYPosition = (eID) ->
       elm = angular.element.find('#'+ eID)[0]
-      
+
       if elm
         y = elm.offsetTop
         node = elm
@@ -61,9 +61,9 @@ angular.module("angularSmoothscroll", [])
         i = startY
 
         while i < stopY
-          $timeout (->
-            $window.scrollTo 0, leapY
-            ), timer * speed
+          # TODO: Using setTimeout with string to slow down animation (with function reference it is too fast)
+          # Have not found a proper alternative yet, except using jQuery animate
+          setTimeout 'window.scrollTo(0, '+leapY+')', timer * speed
 
           leapY += step
           leapY = stopY  if leapY > stopY
@@ -73,22 +73,22 @@ angular.module("angularSmoothscroll", [])
       i = startY
 
       while i > stopY
-        $timeout (->
-          $window.scrollTo 0, leapY
-        ), timer * speed
+        # TODO: Using setTimeout with string to slow down animation (with function reference it is too fast)
+        # Have not found a proper alternative yet, except using jQuery animate
+        setTimeout 'window.scrollTo(0, '+leapY+')', timer * speed
 
         leapY -= step
         leapY = stopY  if leapY < stopY
         timer++
         i -= step
 
-    restrict: "A"
+    restrict: 'A'
 
     link: (scope, element, attr) ->
-      element.bind "click", ->
+      element.bind 'click', ->
         if attr.target
-          $log.log "Smooth scroll: scrolling to", attr.target, "with offset", attr.offset
+          $log.log 'Smooth scroll: scrolling to', attr.target, 'with offset', attr.offset
           smoothScroll attr.target, attr.offset or 100
         else
-          $log.warning "Smooth scroll: no target specified"
+          $log.warning 'Smooth scroll: no target specified'
   ]

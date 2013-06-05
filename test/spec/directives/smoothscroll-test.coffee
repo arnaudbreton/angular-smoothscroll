@@ -27,13 +27,11 @@ describe "smoothscroll", ->
     scope.$digest()
 
     $('body').append @target
-    
   )
 
   it "should scroll to target", inject(($timeout) ->
     expect(currentYPosition()).toEqual 0
     @anchor[0].click()
-    $timeout.flush()
     waitsFor (->
         console.log currentYPosition()
         currentYPosition() == 100
