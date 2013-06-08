@@ -15,15 +15,13 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "components",
+    "app/",
+    "dist/components",
     "test/",
     "**/*.txt",
     "karma-e2e.conf.js",
     "karma.conf.js",
     "package.json",
-    ".bowerrc",
-    ".editorconfig",
-    ".gitignore",
     "Gruntfile.js"
   ]
 }
