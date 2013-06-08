@@ -6,11 +6,19 @@ Pure vanilla JS and jQuery versions.
 
 #How to use it?
 
-## Common
+## Installation
+
+### Build your own copy
 
 1. Build Coffeescript `grunt coffee:dist`
 2. Copy generated JS in .tmp folder and include it
-3. Add the dependency to your app `app.module('myApp', ['angularSmoothscroll'])`
+
+### Via Twitter Bower (https://github.com/bower/bower)
+
+Run `bower install angular-smoothscroll` in your project
+
+###Add the dependency to your app 
+Declare an AngularJS module with a dependency: `app.module('myApp', ['angularSmoothscroll'])`
 
 ##Vanilla JS (to improve, too fast) 
 
