@@ -13,6 +13,10 @@ Pure vanilla JS and jQuery versions.
 1. Build Coffeescript `grunt coffee:dist`
 2. Copy generated JS in .tmp folder and include it
 
+### Get the last version
+
+Copy the last version from the `dist/scripts` folder
+
 ### Via Twitter Bower (https://github.com/bower/bower)
 
 Run `bower install angular-smoothscroll` in your project
