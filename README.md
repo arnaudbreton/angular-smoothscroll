@@ -1,15 +1,27 @@
 angular-smoothscroll
 ====================
 
-An AngularJS directive to get a smooth scroll effect (like this: http://css-tricks.com/examples/SmoothPageScroll/)
+AngularJS directives to get a smooth scroll effect (like this: http://css-tricks.com/examples/SmoothPageScroll/).
+Pure vanilla JS and jQuery versions.
 
 #How to use it?
+
+## Common
 
 1. Build Coffeescript `grunt coffee:dist`
 2. Copy generated JS in .tmp folder and include it
 3. Add the dependency to your app `app.module('myApp', ['angularSmoothscroll'])`
-4. Declare an HTML the link element which start scroll and the target `<a smooth-scroll target="target">Scroll to Target</a>`
-5. You can declare the offset (default is 100): `<a smooth-scroll target="target" offset="30">Scroll to Target</a>`
+
+##Vanilla JS (to improve, too fast) 
+
+Just declare an HTML link element which will start scroll, add the `smooth-scroll` directive and pass the target ID: `<a smooth-scroll target="target">Scroll to Target</a>`
+
+##jQuery version 
+Declare an HTML link element which will start scroll, add the `smooth-scroll-jquery` directive and pass the target ID: `<a smooth-scroll-jquery target="target">Scroll to Target</a>`. No target means scroll to top.
+
+You can declare the speed (default is 500): `<a smooth-scroll-jquery target="target" speed="1000">Scroll to Target</a>`
+
+With both versions, you can declare the offset (default is 100): `<a smooth-scroll[-jquery] target="target" offset="30">Scroll to Target</a>`
 
 #How to contribute?
 
@@ -17,5 +29,10 @@ An AngularJS directive to get a smooth scroll effect (like this: http://css-tric
 2. Make your changes
 3. Test them: `grunt test`
 4. Open a pull-request
+
+#To improve
+
+1. Vanilla JS implementation which is not working very well
+2. Make the Angular JS unit tests pass (cf. http://stackoverflow.com/questions/16929046/effectively-unit-test-an-angularjs-directive-which-is-manipulating-the-dom?noredirect=1#comment24448390_16929046)
 
 Powered by AngularJS (http://angularjs.org), Yeoman (http://yeoman.io), Grunt (http://gruntjs.com) and Karma (http://karma-runner.github.io/0.8/index.html)

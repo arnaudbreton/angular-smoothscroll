@@ -7,7 +7,7 @@ Usage: <element smooth-scroll target='id' [offset='value']></element>
 Inspired by http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
 ###
 angular.module('angularSmoothscroll', [])
-  .directive 'smoothScroll', ['$log', '$timeout', '$window', ($log, $timeout, $window) ->
+  .directive('smoothScroll', ['$log', '$timeout', '$window', ($log, $timeout, $window) ->
     ###
     Retrieve the current vertical position
     @returns Current vertical position
@@ -83,12 +83,26 @@ angular.module('angularSmoothscroll', [])
         i -= step
 
     restrict: 'A'
-
     link: (scope, element, attr) ->
       element.bind 'click', ->
         if attr.target
-          $log.log 'Smooth scroll: scrolling to', attr.target, 'with offset', attr.offset
-          smoothScroll attr.target, attr.offset or 100
+          offset = attr.offset or 100
+          $log.log 'Smooth scroll: scrolling to', attr.target, 'with offset', offset
+          smoothScroll attr.target, offset
         else
           $log.warning 'Smooth scroll: no target specified'
-  ]
+  ])
+  .directive('smoothScrollJquery', ['$log', ($log) ->
+    restrict: 'A'
+    link: (scope, element, attr) ->
+      element.bind 'click', ->
+        if attr.target
+          offset = attr.offset or 100;
+          target = $('#'+attr.target)
+          speed = attr.speed or 500
+          $log.log 'Smooth scroll jQuery: scrolling to', attr.target, 'with offset', offset, 'and speed', speed
+          $('html,body').stop().animate({scrollTop: target.offset().top - attr.offset}, speed)
+        else
+          $log.log 'Smooth scroll jQuery: no target specified, scrolling to top'  
+          $('html,body').stop().animate({scrollTop: 0}, speed);
+  ])
