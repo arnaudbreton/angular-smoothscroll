@@ -1,0 +1,28 @@
+{
+  "name": "angular-smoothscroll",
+  "version": "0.0.1",
+  "main": "dist/scripts/2d8e100/scripts.js",
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "angular": "~1.0.7",
+    "es5-shim": "~2.0.11",
+    "json3": "~3.2.4"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.0.7",
+    "angular-scenario": "~1.0.7"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "test/",
+    "**/*.txt",
+    "karma-e2e.conf.js",
+    "karma.conf.js",
+    "package.json",
+    ".bowerrc",
+    ".editorconfig",
+    ".gitignore"
+  ]
+}
