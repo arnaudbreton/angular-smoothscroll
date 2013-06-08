@@ -23,6 +23,7 @@
     "package.json",
     ".bowerrc",
     ".editorconfig",
-    ".gitignore"
+    ".gitignore",
+    "Gruntfile.js"
   ]
 }
