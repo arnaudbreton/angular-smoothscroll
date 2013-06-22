@@ -101,7 +101,7 @@ angular.module('angularSmoothscroll', [])
           target = $('#'+attr.target)
           speed = attr.speed or 500
           $log.log 'Smooth scroll jQuery: scrolling to', attr.target, 'with offset', offset, 'and speed', speed
-          $('html,body').stop().animate({scrollTop: target.offset().top - attr.offset}, speed)
+          $('html,body').stop().animate({scrollTop: target.offset().top - offset}, speed)
         else
           $log.log 'Smooth scroll jQuery: no target specified, scrolling to top'  
           $('html,body').stop().animate({scrollTop: 0}, speed);
