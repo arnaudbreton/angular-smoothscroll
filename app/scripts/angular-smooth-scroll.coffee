@@ -29,7 +29,7 @@ angular.module('angularSmoothscroll', [])
     @returns The vertical position of element with id eID
     ###
     elmYPosition = (eID) ->
-      elm = angular.element.find('#'+ eID)[0]
+      elm = document.getElementById(eID)
 
       if elm
         y = elm.offsetTop
@@ -90,7 +90,7 @@ angular.module('angularSmoothscroll', [])
           $log.log 'Smooth scroll: scrolling to', attr.target, 'with offset', offset
           smoothScroll attr.target, offset
         else
-          $log.warning 'Smooth scroll: no target specified'
+          $log.warn 'Smooth scroll: no target specified'
   ])
   .directive('smoothScrollJquery', ['$log', ($log) ->
     restrict: 'A'
