@@ -19,7 +19,8 @@ describe "Angular Smooth Scroll", ->
 
   beforeEach inject(($rootScope, $compile) ->
     @target = angular.element("<div id=\"target\" style=\"position:absolute; top:200px;\"></div>")
-    $('body').append @target
+    $('body').height(window.innerHeight*2).append @target
+    window.scrollTo(0, 0);
   )
 
   describe "smoothscroll directive", ->
@@ -44,13 +45,11 @@ describe "Angular Smooth Scroll", ->
   describe "smoothscroll jQuery directive", ->
     it "should scroll to target", inject(($rootScope, $compile)->
       @anchor = angular.element("<a smooth-scroll-jquery target=\"target\"></a>")
-      @target = angular.element("<div id=\"target\" style=\"position:absolute; top:200px;\"></div>")
 
       scope = $rootScope.$new()
       $compile(@anchor) scope
       scope.$digest()
 
-      $('body').append @target
       expect(currentYPosition()).toEqual 0
       @anchor[0].click()
       waitsFor (->
