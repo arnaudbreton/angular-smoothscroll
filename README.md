@@ -6,6 +6,10 @@ Pure vanilla JS and jQuery versions.
 
 #How to use it?
 
+## Demo 
+
+Here is a demo Plunkr: http://plnkr.co/edit/rD0Zgi6rg3Spc2XeVrZf?p=preview
+
 ## Installation
 
 ### Build your own copy
