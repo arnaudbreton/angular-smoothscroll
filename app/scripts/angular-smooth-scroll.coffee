@@ -87,10 +87,10 @@ angular.module('angularSmoothscroll', [])
       element.bind 'click', ->
         if attr.target
           offset = attr.offset or 100
-          #$log.log 'Smooth scroll: scrolling to', attr.target, 'with offset', offset
+          $log.log 'Smooth scroll: scrolling to', attr.target, 'with offset', offset
           smoothScroll attr.target, offset
-        #else
-        #  $log.warn 'Smooth scroll: no target specified'
+        else
+          $log.warn 'Smooth scroll: no target specified'
   ])
   .directive('smoothScrollJquery', ['$log', ($log) ->
     restrict: 'A'
@@ -100,9 +100,9 @@ angular.module('angularSmoothscroll', [])
           offset = attr.offset or 100;
           target = $('#'+attr.target)
           speed = attr.speed or 500
-          #$log.log 'Smooth scroll jQuery: scrolling to', attr.target, 'with offset', offset, 'and speed', speed
+          $log.log 'Smooth scroll jQuery: scrolling to', attr.target, 'with offset', offset, 'and speed', speed
           $('html,body').stop().animate({scrollTop: target.offset().top - offset}, speed)
         else
-          #$log.log 'Smooth scroll jQuery: no target specified, scrolling to top'  
+          $log.log 'Smooth scroll jQuery: no target specified, scrolling to top'  
           $('html,body').stop().animate({scrollTop: 0}, speed);
   ])
