@@ -220,6 +220,15 @@ module.exports = function (grunt) {
         }]
       }
     },
+    strip : {
+      main : {
+        src : '<%= yeoman.dist %>/scripts/scripts.js',
+        dest : '<%= yeoman.dist %>/scripts/scripts.js',
+        options : {
+          nodes : ['console.', '$log.']
+        }
+      }
+    },
     uglify: {
       dist: {
         files: {
@@ -294,6 +303,7 @@ module.exports = function (grunt) {
     'copy',
     'cdnify',
     'ngmin',
+    'strip',
     'uglify',
     'rev',
     'usemin'
