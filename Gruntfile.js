@@ -45,7 +45,7 @@ module.exports = function (grunt) {
     },
     connect: {
       options: {
-        port: 9000,
+        port: 9009,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost'
       },
@@ -304,7 +304,7 @@ module.exports = function (grunt) {
     'cdnify',
     'ngmin',
     'strip',
-    'uglify',
+//    'uglify',
     'rev',
     'usemin'
   ]);
