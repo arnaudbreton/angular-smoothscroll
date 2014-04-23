@@ -4,7 +4,7 @@
 A simple AngularJS directive to render a smooth scroll effect
 Usage: <element smooth-scroll target='id' [offset='value']></element>
 @author: Arnaud BRETON (arnaud@videonot.es)
-Inspired by http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
+Inspired by http://www.itnewb.com/tutorial/Create-the-Smooth-Scroll-Effect-with-JavaScript
 ###
 angular.module('angularSmoothscroll', [])
   .directive('smoothScroll', ['$log', '$timeout', '$window', ($log, $timeout, $window) ->
