@@ -1,7 +1,7 @@
 {
     "name": "angular-smoothscroll",
-    "version": "1.1.0",
-    "main": "dist/scripts/2d8e100/scripts.js",
+    "version": "1.1.1",
+    "main": "dist/scripts/bb15da28.scripts.js",
     "dependencies": {
         "jquery": "^1.9.1",
         "angular": "^1.2.6",

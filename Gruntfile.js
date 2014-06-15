@@ -301,7 +301,6 @@ module.exports = function (grunt) {
     'htmlmin',
     'concat',
     'copy',
-    'cdnify',
     'ngmin',
     'strip',
     'uglify',
