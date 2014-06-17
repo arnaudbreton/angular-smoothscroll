@@ -86,7 +86,7 @@ angular.module('angularSmoothscroll', [])
     link: (scope, element, attr) ->
       element.bind 'click', ->
         if attr.target
-          offset = attr.offset or 100
+          offset = attr.offset or 0
           $log.log 'Smooth scroll: scrolling to', attr.target, 'with offset', offset
           smoothScroll attr.target, offset
         else
@@ -97,7 +97,7 @@ angular.module('angularSmoothscroll', [])
     link: (scope, element, attr) ->
       element.bind 'click', ->
         if attr.target
-          offset = attr.offset or 100;
+          offset = attr.offset or 0;
           target = $('#'+attr.target)
           speed = attr.speed or 500
           $log.log 'Smooth scroll jQuery: scrolling to', attr.target, 'with offset', offset, 'and speed', speed
